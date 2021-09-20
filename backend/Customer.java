@@ -70,7 +70,7 @@ public class Exec extends Exception
         l.password=password;
         hm.put(cid,l);
     }
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Exec m=new Exec();
 		int cid;String password;
 		int c;
@@ -98,5 +98,5 @@ public class Exec extends Exception
 				break;
 				default :System.out.println("Enter a Valid choice Broo...");
 		}
-	}
+	}*/
 }
