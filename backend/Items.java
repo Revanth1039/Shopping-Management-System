@@ -1,0 +1,128 @@
+//creating package
+package items;
+
+//Importing libraries
+import java.util.*;
+import java.lang.Exception;
+
+class Item
+{
+	//Data memebers declaration
+	private int itno;
+	private String itname;
+	private double rate;
+	//constructor
+	Item(int itno,String itname,double rate)
+	{
+		this.itno=itno;
+		this.itname=itname;
+		this.rate=rate;
+	}
+	
+	//setter and getter methods
+	void setItno(int itno)
+	{
+		this.itno=itno;
+	}
+	void setItname(String itname)
+	{
+		this.itname=itname;
+	}
+	void setRate(double rate)
+	{
+		this.rate=rate;
+	}
+	int getItno()
+	{
+		return itno;
+	}
+	String getItname()
+	{
+		return itname;
+	}
+	double getRate()
+	{
+		return rate;
+	}
+}
+
+class ItemsList
+{
+	//Items list creation
+	HashMap<Integer,Item> itms=new HashMap<Integer,Item>();
+	void createItemsList()
+	{
+		itms.put(1,new Item(1,"apple",50.5));
+		itms.put(2,new Item(2,"banana",25.0));
+		itms.put(3,new Item(3,"orange",20.7));
+		itms.put(4,new Item(4,"pineapple",67));
+		itms.put(5,new Item(5,"mango",45));
+		itms.put(6,new Item(6,"tomato",20));
+		itms.put(7,new Item(7,"carrot",35));
+	}
+}
+
+//Exception class
+class InvalidItno extends Exception
+{
+	InvalidItno(String str)
+	{
+		super(str);
+	}
+}
+
+class Changing
+{
+	ItemsList itls=new ItemsList();
+	
+	//creating items list
+	void createList()
+	{
+		itls.createItemsList();
+	}
+	//changing rate of item
+	void changeRate(int id,double new_rate)
+	{
+		try
+		{
+			Item it=itls.itms.get(id);
+			if(it==null)
+				throw new InvalidItno("The given item id doesnot exist");
+			else
+				it.setRate(new_rate);
+		}
+		catch(InvalidItno e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	void print()
+	{
+		Iterator itr=itls.itms.entrySet().iterator();
+		System.out.println("Item No\t Item Name\t Item Rate");
+		while(itr.hasNext())
+		{
+			Map.Entry mapElement=(Map.Entry)itr.next();
+			Item it=((Item)mapElement.getValue());
+			System.out.println(it.getItno()+"\t "+it.getItname()+"\t\t "+it.getRate());
+		}
+	}
+	//adding new item
+	
+	//removing item
+}
+
+/*
+class Start
+{
+	public static void main(String[] args)
+	{
+		Changing ch=new Changing();
+		ch.createList();
+		ch.print();
+		System.out.println("new rates");
+		ch.changeRate(8,5.0);
+		ch.print();
+	}
+}
+*/
