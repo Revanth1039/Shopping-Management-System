@@ -20,12 +20,12 @@ public class Exec extends Exception
         l.phNo="9398979743";
         hm.put(17900,l);
     }
-    /*void remove(int cid){
+    void remove(int cid){
         if(hm.containsKey(cid)){
             System.out.println("User "+this.hm.get(cid).cname+" Removed successfully");
             this.hm.remove(cid);
         }
-    }*/
+    }
     boolean login(int cid,String password){
         if(hm.containsKey(cid) && hm.get(cid).password.equals(password)){
 
@@ -33,12 +33,12 @@ public class Exec extends Exception
         }
         return false;
     }
-    /*String getName(int cid){
+    String getName(int cid){
         return this.hm.get(cid).cname;
     }
     String getPhno(int cid){
         return this.hm.get(cid).phNo;
-    }*/
+    }
     void signup(){
         int cid;
         //long phno;
