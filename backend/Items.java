@@ -151,6 +151,7 @@ class Changing
 	}
 	
 	//removing item
+	//Added Remove item
 	void removeItem(int item_id){
 		
 		// If item Doesnt exists
