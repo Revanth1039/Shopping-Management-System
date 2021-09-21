@@ -33,27 +33,29 @@ public class Customers extends Exception
     void allCustoDetails(){
         for(Map.Entry e:hm.entrySet()){
             Customer c=(Customer)e.getValue();
-            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.cname+" "+"Contact no: "+c.phNo); //Retreiving the details of the customer
+            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.cname+" "+"Contact no: "+c.phNo); //Retreiving the details of the customer by traversing through hashmap
         }
     }
     void remove(int cid){
         if(hm.containsKey(cid)){
-            System.out.println("User "+this.hm.get(cid).cname+" Removed successfully"); //Removing the customer details
+            System.out.println("User "+this.hm.get(cid).cname+" Removed successfully"); //Removing the customer details by using id
             this.hm.remove(cid);
         }
     }
     boolean login(int cid,String password){
         if(hm.containsKey(cid) && hm.get(cid).password.equals(password)){
-
             return true;
         }
+        //if any value is not correct then return Customer details incorrect.
         return false;
     }
     String getName(int cid){
         return this.hm.get(cid).cname; 
+        //get name of customer based on id
     }
     String getPhno(int cid){
         return this.hm.get(cid).phNo;
+        //get contact no of customer based on id.
     }
     void signup(){
         int cid;
@@ -63,6 +65,7 @@ public class Customers extends Exception
         while(true){
         System.out.print("Enter 5 digit customer id: ");
         cid=sc.nextInt();
+        //if user selected id is already exists or id is not of 5 digit number then he need to select id again
 		if(String.valueOf(cid).length()!=5){
 			System.out.println("Enter valid id number");
 			continue;
@@ -73,6 +76,7 @@ public class Customers extends Exception
         else
         break;
         }
+        //Console class is just used to read password
         Console con=System.console();
         System.out.print("Create password: ");
         password=String.valueOf(con.readPassword());
@@ -84,6 +88,7 @@ public class Customers extends Exception
         l.cname=name;
         l.phNo=phno;
         l.password=password;
+        //Storing new Customer details in hashmap by taking id as key.
         hm.put(cid,l);
     }
 /*public static void main(String[] args) {
