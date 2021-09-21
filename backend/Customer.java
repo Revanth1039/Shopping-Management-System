@@ -5,7 +5,7 @@ class Customer extends Exception{
 }
 public class Customers extends Exception
 {
-    private HashMap<Integer,Customer> hm=new HashMap<Integer,Customer>();
+    private HashMap<Integer,Customer> hm=new HashMap<Integer,Customer>();//Created hashmap to store the values of the customer
     Customers(){
         Customer l=new Customer();
         l.cname="Revanth";
@@ -17,16 +17,28 @@ public class Customers extends Exception
         l.password="Password";
         l.phNo="9398979743";
         hm.put(17900,l);
+        l.cname="Aditya";
+        l.password="Password";
+        l.phNo="97035545200";
+        hm.put(18001,l);
+        l.cname="Abhilash";
+        l.password="Password";
+        l.phNo="9849040420";
+        hm.put(18030,l);
+        l.cname="Pranay";
+        l.password="Password";
+        l.phNo="8254828200";
+        hm.put(19054,l);
     }
     void allCustoDetails(){
         for(Map.Entry e:hm.entrySet()){
             Customer c=(Customer)e.getValue();
-            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.cname+" "+"Contact no: "+c.phNo);/*Added by revanth*/
+            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.cname+" "+"Contact no: "+c.phNo); //Retreiving the details of the customer
         }
     }
     void remove(int cid){
         if(hm.containsKey(cid)){
-            System.out.println("User "+this.hm.get(cid).cname+" Removed successfully");
+            System.out.println("User "+this.hm.get(cid).cname+" Removed successfully"); //Removing the customer details
             this.hm.remove(cid);
         }
     }
@@ -37,12 +49,12 @@ public class Customers extends Exception
         }
         return false;
     }
-    /*String getName(int cid){
-        return this.hm.get(cid).cname;
+    String getName(int cid){
+        return this.hm.get(cid).cname; 
     }
     String getPhno(int cid){
         return this.hm.get(cid).phNo;
-    }*/
+    }
     void signup(){
         int cid;
         String phno;
@@ -61,7 +73,7 @@ public class Customers extends Exception
         else
         break;
         }
-        Console con=System.console();/*Added by revanth to read the password*/
+        Console con=System.console();
         System.out.print("Create password: ");
         password=String.valueOf(con.readPassword());
         System.out.print("Enter name: ");
