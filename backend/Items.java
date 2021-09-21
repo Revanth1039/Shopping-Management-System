@@ -166,6 +166,35 @@ class Changing
 		else
 			itls.itms.remove(item_id);
 	}
+	//checking item exists or not
+	boolean itemExists(int id)
+	{
+		Item it=itls.itms.get(id);
+		if(it==null)
+			return false;
+		else
+			return true;
+	}
+	//displaying the item
+	void displayItem(int id)
+	{
+		try
+		{
+			Item it=itls.itms.get(id);
+			if(it==null)
+				throw new InvalidItno("The item doesnot exists");
+			else
+			{
+				System.out.println("The item number is "+it.getItno());
+				System.out.println("The item name is "+it.getItname());
+				System.out.println("The item rate is "+it.getRate());
+			}
+		}
+		catch(InvalidItno e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
 	
 }
 /*
