@@ -108,12 +108,68 @@ class Changing
 		}
 	}
 	//adding new item
+	void addItem(int item_id,String item_name,double rate){
+		
+		// Checking for the duplicate Item id's
+		if(itls.itms.containsKey(item_id)){  
+		try{
+			throw new InvalidItno("The Item Number already exists in the shopping cart");
+			}
+		
+		catch(InvalidItno ex){
+			System.out.println(ex.getMessage());
+		}
+		}
+		
+		// If the Item doesnt exists
+		else{
+			
+		Iterator itr=itls.itms.entrySet().iterator();
+		boolean flag = true;
+		while(itr.hasNext())
+		{
+			Map.Entry mapElement=(Map.Entry)itr.next();
+			Item it=((Item)mapElement.getValue());
+			
+			// If the Item Name already exists in the shopping cart
+			if(it.getItname().toLowerCase().equals(item_name.toLowerCase())){
+				flag = false;
+				try{
+					throw new InvalidItno("Item Name Already Exists");
+				}
+				catch(InvalidItno ex){
+					System.out.println(ex.getMessage());
+				}
+				break;
+			}
+		}
+		
+		// If the Item name is unique add it 
+		if(flag)
+			itls.itms.put(item_id,new Item(item_id,item_name,rate));
+		}
+	}
 	
 	//removing item
+	//Added Remove item
+	void removeItem(int item_id){
+		
+		// If item Doesnt exists
+		if(!itls.itms.containsKey(item_id)){
+			 try{
+				 throw new InvalidItno("Item Doesnt exist in the cart");
+			 }
+			 catch(InvalidItno ex){
+				 System.out.println(ex.getMessage());
+			 }
+		}
+		else
+			itls.itms.remove(item_id);
+	}
+	
 }
-
 /*
-class Start
+class Items
 {
 	public static void main(String[] args)
 	{
@@ -123,6 +179,13 @@ class Start
 		System.out.println("new rates");
 		ch.changeRate(8,5.0);
 		ch.print();
+		System.out.println("Before Add");
+		ch.addItem(31,"carrot",102.32);
+		System.out.println("After Adding Item");
+		ch.print();
+		ch.removeItem(8);
+		ch.print();
 	}
 }
+
 */
