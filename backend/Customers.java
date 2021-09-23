@@ -41,7 +41,8 @@ public class Customers  extends Exception
     void allCustoDetails(){
         for(Map.Entry e:hm.entrySet()){
             Customer c=(Customer)e.getValue();
-            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.getName()+" "+"Contact no: "+c.getPhno());
+            System.out.println("Customer id\t\t\t\tCustomer Name\t\t\t\t\t\t Contact no");
+            System.out.println(e.getKey()+"\t\t\t\t"+c.getName()+"\t\t\t\t\t\t"+c.getPhno())
         }
     }
     void remove(int cid){
