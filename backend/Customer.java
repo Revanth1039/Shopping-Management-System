@@ -1,3 +1,4 @@
+package customersdata;
 import  java.util.*;
 import java.io.*;
 class Customer extends Exception{
