@@ -51,50 +51,7 @@ public class Customers  extends Exception
             this.hm.remove(cid);
         }
     }
-    boolean login(int cid,String password){
-        if(hm.containsKey(cid) && hm.get(cid).getPassword().equals(password)){
-            return true;
-        }
-		//System.out.println(hm.get(cid).getPassword());
-        return false;
-    }
-    String getName(int cid){
-        return this.hm.get(cid).getName();
-    }
-    String getPhno(int cid){
-        return this.hm.get(cid).getPhno();
-    }
-    void signup(){
-        int cid;
-        String phno;
-        Scanner sc=new Scanner(System.in);
-        String name,password;
-        while(true){
-        System.out.print("Enter 5 digit customer id: ");
-        cid=sc.nextInt();
-		if(String.valueOf(cid).length()!=5){
-			System.out.println("Enter valid id number");
-			continue;
-		}
-        if(hm.containsKey(cid)){
-            System.out.print("\nalready exists select new one ");
-        }
-        else
-        break;
-        }
-        Console con=System.console();
-        System.out.print("Create password: ");
-        password=String.valueOf(con.readPassword());
-        System.out.print("Enter name: ");
-        name=sc.next();
-        System.out.print("Enter phno: ");
-        phno=sc.next();
-        Customer l=new Customer();
-        l.setName(name);
-        l.setPhno(phno);
-        l.setPassword(password);
-        hm.put(cid,l);
-    }
+    
 /*public static void main(String[] args) {
 Customers m=new Customers();
 int cid;String password;
