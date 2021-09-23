@@ -39,10 +39,11 @@ public class Customers  extends Exception
         hm.put(17900,l);
     }
      void allCustoDetails(){
+         System.out.println("Customer id\t\t\tCustomer Name\t\t\t Contact no");
         for(Map.Entry e:hm.entrySet()){
             Customer c=(Customer)e.getValue();
-            System.out.println("Customer id\t\t\t\tCustomer Name\t\t\t\t\t\t Contact no");
-            System.out.println(e.getKey()+"\t\t\t\t"+c.getName()+"\t\t\t\t\t\t"+c.getPhno())
+            
+            System.out.println(e.getKey()+"\t\t\t\t"+c.getName()+"\t\t\t\t"+c.getPhno());
         }
     }
     void remove(int cid){
