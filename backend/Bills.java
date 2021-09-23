@@ -11,6 +11,7 @@ public class Bills {
    Bills(int id, int quantity){
     double totalPrice = 0.0;
         // total price for that product
+        //creating item object
         Items it=new Items();
         it.createList();
         double rate=it.getPrice(id);
