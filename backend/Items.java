@@ -48,6 +48,7 @@ class Item
 class ItemsList
 {
 	//Items list creation
+	//Creating the items list
 	HashMap<Integer,Item> itms=new HashMap<Integer,Item>();
 	void createItemsList()
 	{
@@ -61,7 +62,7 @@ class ItemsList
 	}
 }
 
-//Exception class
+//InvalidItno exception class
 class InvalidItno extends Exception
 {
 	InvalidItno(String str)
@@ -70,6 +71,7 @@ class InvalidItno extends Exception
 	}
 }
 
+//class for changing the items like adding,removing,changing rate
 public class Items
 {
 	ItemsList itls=new ItemsList();
@@ -95,6 +97,7 @@ public class Items
 			System.out.println(e.getMessage());
 		}
 	}
+	//method for printing the items list
 	void print()
 	{
 		Iterator itr=itls.itms.entrySet().iterator();
