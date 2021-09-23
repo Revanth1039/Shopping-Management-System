@@ -1,4 +1,4 @@
-package customersdata;
+
 import  java.util.*;
 import java.io.*;
 class Customer extends Exception{
@@ -54,7 +54,7 @@ public class Customers  extends Exception
         if(hm.containsKey(cid) && hm.get(cid).getPassword().equals(password)){
             return true;
         }
-		System.out.println(hm.get(cid).getPassword());
+		//System.out.println(hm.get(cid).getPassword());
         return false;
     }
     String getName(int cid){

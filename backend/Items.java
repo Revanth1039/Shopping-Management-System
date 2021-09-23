@@ -1,6 +1,4 @@
 //core java code for Items package
-//creating package
-package items;
 
 //Importing libraries
 import java.util.*;
@@ -72,7 +70,7 @@ class InvalidItno extends Exception
 	}
 }
 
-class Changing
+public class Items
 {
 	ItemsList itls=new ItemsList();
 	

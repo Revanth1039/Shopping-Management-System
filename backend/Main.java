@@ -5,6 +5,8 @@ class Main
 {
 	public static void main(String args[])
 	{
+		Customers cust=new Customers();
+		Items itemchange=new Items();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Thank You For Choosing Us :) ");
 		System.out.println("How Do You Want To Cointinue?");
@@ -112,7 +114,7 @@ class Main
 									break;
 							}
 				}
-			}//main switch second case
+			}//main switch second case for customers
 			case 2:
 				System.out.println("What do you want to do?:");
 				System.out.println("1.Sign in");
@@ -124,9 +126,10 @@ class Main
 						int cid=sc.nextInt();
 						System.out.println("Enter Your Password");
 						String cpswrd=sc.next();
-						if(true){//checking customer login details
-							System.out.println("Hello Customer Greetings for the day!! :)");
+							if(cust.login(cid,cpswrd)){//checking customer login detail
+								System.out.println("Hello Customer Greetings for the day!! :)");
 							//show items list
+							
 							System.out.println("Do you want to buy anything?");
 							System.out.println("1.Yes");
 							System.out.println("2.No");
@@ -145,14 +148,16 @@ class Main
 									System.out.println("Thank you for your time, hope you shop with us soon :(");
 									break;
 							}
-							
-						}
+							}
+							else{
+								System.out.println("Invalid User");
+								System.exit(0);
+							}	
 						break;
 						case 2:
 							System.out.println("Hi..");
 							//registration process
-							System.out.println("Enter your name:");
-							String crName=sc.next();//customer register name
+							cust.signup();
 							System.out.println("Thank you for registering with us HAVE A NICE DAY :)");
 							break;
 				}
