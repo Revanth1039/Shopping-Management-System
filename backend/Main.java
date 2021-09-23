@@ -6,7 +6,8 @@ class Main
 	public static void main(String args[])
 	{
 		Customers cust=new Customers();
-		Items itemchange=new Items();
+		Items it=new Items();
+		it.createList();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Thank You For Choosing Us :) ");
 		System.out.println("How Do You Want To Cointinue?");
@@ -128,8 +129,8 @@ class Main
 						String cpswrd=sc.next();
 							if(cust.login(cid,cpswrd)){//checking customer login detail
 								System.out.println("Hello Customer Greetings for the day!! :)");
-							//show items list
-							
+							//showing items list
+							it.print();
 							System.out.println("Do you want to buy anything?");
 							System.out.println("1.Yes");
 							System.out.println("2.No");
