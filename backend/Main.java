@@ -8,6 +8,7 @@ class Main
 		Customers cust=new Customers();
 		Items it=new Items();
 		it.createList();
+		Admins admin = new Admins();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Thank You For Choosing Us :) ");
 		System.out.println("How Do You Want To Cointinue?");
@@ -23,7 +24,7 @@ class Main
 			System.out.println("Enter Your Password");
 			String Apswrd=sc.next();
 			//duplicate func
-			if(true)
+			if(admin.login(Aid,Apswrd))
 			{
 				System.out.println("Hello Admin :)");
 				System.out.println("What do you want to do?");
@@ -37,15 +38,18 @@ class Main
 					case 1:
 						//duplicate fun print customer details
 						//customerDetails();
-						System.out.print("Customer details printed");
+						admin.view();
+						System.out.println("Customer details printed");
 						break;
 					case 2:
 						//duplicate fun print item details	
 						//itemDetails();
+						it.print();
 						System.out.print("Item details printed");
 						break;
 					case 3:
 						//customerDetails();
+						admin.view();
 						System.out.print("Customer details printed");
 						System.out.println("What do you want to do?");
 						System.out.println("1.Add Customer");
@@ -54,13 +58,8 @@ class Main
 						int mcOpt=sc.nextInt();
 						switch(mcOpt){
 							case 1:
-								System.out.print("Enter the customer id to be added:");
-								int mcaid=sc.nextInt();
-								System.out.println("Enter the customer name:");
-								String mcname=sc.next();
-								System.out.println("Enter the customer password:");
-								String mcpwd=sc.next();
 								//function call to add the customer into customer list
+								cust.signup();
 								System.out.println("Customer details added");
 								break;
 							case 2:
@@ -69,12 +68,15 @@ class Main
 								//check if customer id exists or not
 								//if exists
 								//call customer remove function
+								cust.remove(mcrid);
 								System.out.println("Customer removed");
 								//else invalid customer
 								break;
 						}
+						break;
 						case 4:
 							//ITEMDetails();
+							it.print();
 							System.out.print("Item details printed");
 							System.out.println("What do you want to do?");
 							System.out.println("1.Add Item");
@@ -91,6 +93,7 @@ class Main
 									System.out.println("Enter the item price:");
 									double miprice=sc.nextDouble();
 									//function call to add the item into item list
+									it.addItem(miaid,miname,miprice);
 									System.out.println("Item details added");
 									break;
 								case 2:
@@ -99,8 +102,8 @@ class Main
 									//check if item id exists or not
 									//if exists
 									//call item remove function
+									it.removeItem(mirid);
 									System.out.println("Item removed");
-									//else invalid customer
 									break;
 								case 3:
 									System.out.print("Enter the id of item for which price is to be changed:");
@@ -110,12 +113,18 @@ class Main
 									//check if item id exists or not
 									//if exists
 									//call item price update function
+									it.changeRate(miupid,newprice);
 									System.out.println("Item price updated");
 									//print item list
 									break;
 							}
 				}
-			}//main switch second case for customers
+			}
+			else{
+				System.out.println("Invalid Details");
+			}
+			break;
+			//main switch second case for customers
 			case 2:
 				System.out.println("What do you want to do?:");
 				System.out.println("1.Sign in");
@@ -143,6 +152,7 @@ class Main
 									System.out.println("Enter the quantity of this item you want:");
 									int quantity=sc.nextInt();
 									//call bill funtion
+									Bills billing = new Bills(cbiid,quantity);
 									System.out.println("Thank you for shopping with us HAVE A NICE DAY :)");
 									break;
 								case 2:

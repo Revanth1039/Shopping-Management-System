@@ -87,8 +87,10 @@ public class Items
 			Item it=itls.itms.get(id);
 			if(it==null)
 				throw new InvalidItno("The given item id doesnot exist");
-			else
+			else{
 				it.setRate(new_rate);
+			}
+				
 		}
 		catch(InvalidItno e)
 		{
@@ -113,10 +115,12 @@ public class Items
 		if(itls.itms.containsKey(item_id)){  
 		try{
 			throw new InvalidItno("The Item Number already exists in the shopping cart");
+			
 			}
 		
 		catch(InvalidItno ex){
 			System.out.println(ex.getMessage());
+			System.exit(0);
 		}
 		}
 		
@@ -144,8 +148,9 @@ public class Items
 		}
 		
 		// If the Item name is unique add it 
-		if(flag)
+		if(flag){
 			itls.itms.put(item_id,new Item(item_id,item_name,rate));
+		}
 		}
 	}
 	
@@ -162,8 +167,9 @@ public class Items
 				 System.out.println(ex.getMessage());
 			 }
 		}
-		else
+		else{
 			itls.itms.remove(item_id);
+		}
 	}
 	//checking item exists or not
 	boolean itemExists(int id)
@@ -184,7 +190,7 @@ public class Items
 				throw new InvalidItno("The item doesnot exists");
 			else
 			{
-				System.out.println("The item number is "+it.getItno());
+				System.out.println("The item id is "+it.getItno());
 				System.out.println("The item name is "+it.getItname());
 				System.out.println("The item rate is "+it.getRate());
 			}
@@ -193,6 +199,10 @@ public class Items
 		{
 			System.out.println(e.getMessage());
 		}
+	}
+	double getPrice(int id)
+	{
+		return (itls.itms.get(id)).getRate();
 	}
 	
 }
