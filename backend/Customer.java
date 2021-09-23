@@ -1,61 +1,66 @@
 import  java.util.*;
 import java.io.*;
 class Customer extends Exception{
-    String cname,password,phNo;
+    private String cname,password,phNo;
+	String getName(){
+		return this.cname;
+	}
+	void setName(String s){
+		this.cname=s;
+	}
+	String getPassword(){
+		return this.password;
+	}
+	void setPassword(String s){
+		this.password=s;
+	}
+	String getPhno(){
+		return this.phNo;
+	}
+	void setPhno(String s){
+		this.phNo=s;
+	}
+	
 }
-public class Customers extends Exception
+public class Customers  extends Exception
 {
-    private HashMap<Integer,Customer> hm=new HashMap<Integer,Customer>();//Created hashmap to store the values of the customer
+    private HashMap<Integer,Customer> hm=new HashMap<Integer,Customer>();
     Customers(){
         Customer l=new Customer();
-        l.cname="Revanth";
-        l.password="Password";
-        l.phNo="9703531900";
+        l.setName("Revanth");
+        l.setPassword("Password");
+        l.setPhno("9703531900");
         hm.put(16900,l);
         l=new Customer();
-        l.cname="Vamshi";
-        l.password="Password";
-        l.phNo="9398979743";
+        l.setName("Vamshi");
+        l.setPassword("Password");
+        l.setPhno("6303877578");
         hm.put(17900,l);
-        l.cname="Aditya";
-        l.password="Password";
-        l.phNo="97035545200";
-        hm.put(18001,l);
-        l.cname="Abhilash";
-        l.password="Password";
-        l.phNo="9849040420";
-        hm.put(18030,l);
-        l.cname="Pranay";
-        l.password="Password";
-        l.phNo="8254828200";
-        hm.put(19054,l);
     }
     void allCustoDetails(){
         for(Map.Entry e:hm.entrySet()){
             Customer c=(Customer)e.getValue();
-            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.cname+" "+"Contact no: "+c.phNo); //Retreiving the details of the customer by traversing through hashmap
+            System.out.println("Customer id: "+e.getKey()+" "+"Customer Name: "+c.getName()+" "+"Contact no: "+c.getPhno());
         }
     }
     void remove(int cid){
         if(hm.containsKey(cid)){
-            System.out.println("User "+this.hm.get(cid).cname+" Removed successfully"); //Removing the customer details by using id
+            System.out.println("User "+this.hm.get(cid).getName()+" Removed successfully");
             this.hm.remove(cid);
         }
     }
     boolean login(int cid,String password){
-        if(hm.containsKey(cid) && hm.get(cid).password.equals(password)){
+        if(hm.containsKey(cid) && hm.get(cid).getPassword().equals(password)){
             return true;
         }
-        //if any value is not correct then return Customer details incorrect.
+		System.out.println(hm.get(cid).getPassword());
         return false;
     }
     String getName(int cid){
-        return this.hm.get(cid).cname; 
-        //get name of customer based on id
+        return this.hm.get(cid).getName();
     }
     String getPhno(int cid){
-        return this.hm.get(cid).phNo;
-        //get contact no of customer based on id.
+        return this.hm.get(cid).getPhno();
     }
     void signup(){
         int cid;
@@ -65,7 +70,6 @@ public class Customers extends Exception
         while(true){
         System.out.print("Enter 5 digit customer id: ");
         cid=sc.nextInt();
-        //if user selected id is already exists or id is not of 5 digit number then he need to select id again
 		if(String.valueOf(cid).length()!=5){
 			System.out.println("Enter valid id number");
 			continue;
@@ -76,7 +80,6 @@ public class Customers extends Exception
         else
         break;
         }
-        //Console class is just used to read password
         Console con=System.console();
         System.out.print("Create password: ");
         password=String.valueOf(con.readPassword());
@@ -85,10 +88,9 @@ public class Customers extends Exception
         System.out.print("Enter phno: ");
         phno=sc.next();
         Customer l=new Customer();
-        l.cname=name;
-        l.phNo=phno;
-        l.password=password;
-        //Storing new Customer details in hashmap by taking id as key.
+        l.setName(name);
+        l.setPhno(phno);
+        l.setPassword(password);
         hm.put(cid,l);
     }
 /*public static void main(String[] args) {
