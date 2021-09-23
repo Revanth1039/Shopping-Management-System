@@ -159,6 +159,8 @@ public class Items
 	
 	//removing item
 	//Added Remove item
+	//removing item is done here if the item is availiable and returns error if item doesnot exist 
+	     
 	void removeItem(int item_id){
 		
 		// If item Doesnt exists
