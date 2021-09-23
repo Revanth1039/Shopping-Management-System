@@ -38,7 +38,19 @@ public class Customers  extends Exception
         l.setPhno("6303877578");
         hm.put(17900,l);
     }
-
+     void allCustoDetails(){
+        for(Map.Entry e:hm.entrySet()){
+            Customer c=(Customer)e.getValue();
+            System.out.println("Customer id\t\t\t\tCustomer Name\t\t\t\t\t\t Contact no");
+            System.out.println(e.getKey()+"\t\t\t\t"+c.getName()+"\t\t\t\t\t\t"+c.getPhno())
+        }
+    }
+    void remove(int cid){
+        if(hm.containsKey(cid)){
+            System.out.println("User "+this.hm.get(cid).getName()+" Removed successfully");
+            this.hm.remove(cid);
+        }
+    }
     boolean login(int cid,String password){
         if(hm.containsKey(cid) && hm.get(cid).getPassword().equals(password)){
             return true;
