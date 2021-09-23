@@ -194,6 +194,10 @@ public class Items
 			System.out.println(e.getMessage());
 		}
 	}
+	double getPrice(int id)
+	{
+		return (itls.itms.get(id)).getRate();
+	}
 	
 }
 /*
