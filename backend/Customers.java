@@ -37,6 +37,26 @@ public class Customers  extends Exception
         l.setPassword("Password");
         l.setPhno("6303877578");
         hm.put(17900,l);
+        l.setName("Pranay");
+        l.setPassword("Password");
+        l.setPhno("9645555541");
+        hm.put(54545,l);
+        l.setName("Vijay");
+        l.setPassword("Password");
+        l.setPhno("8686156545");
+        hm.put(28285,l);
+        l.setName("Abhilash");
+        l.setPassword("Password");
+        l.setPhno("725651900");
+        hm.put(23546,l);
+        l.setName("Sandeep");
+        l.setPassword("Password");
+        l.setPhno("5656531900");
+        hm.put(02020,l);
+        l.setName("Aditya");
+        l.setPassword("Password");
+        l.setPhno("984851900");
+        hm.put(42425,l);  
     }
      void allCustoDetails(){
          System.out.println("Customer id\t\t\tCustomer Name\t\t\t Contact no");
