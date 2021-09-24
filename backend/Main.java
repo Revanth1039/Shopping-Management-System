@@ -59,7 +59,7 @@ class Main
 						switch(mcOpt){
 							case 1:
 								//function call to add the customer into customer list
-								cust.signup();
+								admin.addcus();
 								System.out.println("Customer details added");
 								admin.view();
 								break;
@@ -69,7 +69,8 @@ class Main
 								//check if customer id exists or not
 								//if exists
 								//call customer remove function
-								cust.remove(mcrid);
+								admin.removecus(mcrid);
+								admin.view();
 								System.out.println("Customer removed");
 								//else invalid customer
 								break;
@@ -89,6 +90,7 @@ class Main
 								case 1:
 									//function call to add the item into item list
 									it.addItem();
+									it.print();
 									System.out.println("Item details added");
 									break;
 								case 2:
@@ -98,6 +100,7 @@ class Main
 									//if exists
 									//call item remove function
 									it.removeItem(mirid);
+									it.print();
 									System.out.println("Item removed");
 									break;
 								case 3:
@@ -109,6 +112,7 @@ class Main
 									//if exists
 									//call item price update function
 									it.changeRate(miupid,newprice);
+									it.print();
 									System.out.println("Item price updated");
 									//print item list
 									break;
