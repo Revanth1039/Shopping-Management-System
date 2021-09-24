@@ -87,14 +87,8 @@ class Main
 							int miOpt=sc.nextInt();
 							switch(miOpt){
 								case 1:
-									System.out.print("Enter the item id to be added:");
-									int miaid=sc.nextInt();//miaid=manageitemaddid
-									System.out.println("Enter the item name:");
-									String miname=sc.next();
-									System.out.println("Enter the item price:");
-									double miprice=sc.nextDouble();
 									//function call to add the item into item list
-									it.addItem(miaid,miname,miprice);
+									it.addItem();
 									System.out.println("Item details added");
 									break;
 								case 2:
