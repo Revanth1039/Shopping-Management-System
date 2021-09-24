@@ -61,6 +61,7 @@ class Main
 								//function call to add the customer into customer list
 								cust.signup();
 								System.out.println("Customer details added");
+								admin.view();
 								break;
 							case 2:
 								System.out.print("Enter the customer id to be removed:");
