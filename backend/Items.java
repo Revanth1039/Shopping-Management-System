@@ -55,7 +55,7 @@ class ItemsList
 		itms.put(1,new Item(1,"apple",50.5));
 		itms.put(2,new Item(2,"banana",25.0));
 		itms.put(3,new Item(3,"orange",20.7));
-		itms.put(4,new Item(4,"pineapple",67));
+		itms.put(4,new Item(4,"cherry",54.23));
 		itms.put(5,new Item(5,"mango",45));
 		itms.put(6,new Item(6,"tomato",20));
 		itms.put(7,new Item(7,"carrot",35));
