@@ -55,7 +55,7 @@ class ItemsList
 		itms.put(1,new Item(1,"apple",50.5));
 		itms.put(2,new Item(2,"banana",25.0));
 		itms.put(3,new Item(3,"orange",20.7));
-		itms.put(4,new Item(4,"cherry",54.23));
+		itms.put(4,new Item(4,"cherry",67));
 		itms.put(5,new Item(5,"mango",45));
 		itms.put(6,new Item(6,"tomato",20));
 		itms.put(7,new Item(7,"carrot",35));
@@ -111,30 +111,38 @@ public class Items
 			System.out.println(it.getItno()+"\t "+it.getItname()+"\t\t "+it.getRate());
 		}
 	}
-	//adding new item
-	void addItem(int item_id,String item_name,double rate){
-		
+	
+	//adding new item into the cart
+	void addItem(){
+		int item_id;
+		// Inputiting the Item Id to be inserted
+		System.out.println("Enter the Item id : ");
+		Scanner sc = new Scanner(System.in);
+		item_id = sc.nextInt();
 		// Checking for the duplicate Item id's
 		if(itls.itms.containsKey(item_id)){  
 		try{
-			throw new InvalidItno("The Item Number already exists in the shopping cart");
-			
+			throw new InvalidItno("The Item Id already exists in the shopping cart");
 			}
 		
 		catch(InvalidItno ex){
 			System.out.println(ex.getMessage());
+			// Terminating if the Item id already exists
 			System.exit(0);
 		}
 		}
 		
-		// If the Item doesnt exists
+		// If the Item Id doesnt exists
 		else{
-			
+			String item_name;
+			System.out.println("Enter the Item Name :");
+			item_name = sc.next();
 		Iterator itr=itls.itms.entrySet().iterator();
 		boolean flag = true;
 		while(itr.hasNext())
 		{
 			Map.Entry mapElement=(Map.Entry)itr.next();
+			// Checking for Item Values
 			Item it=((Item)mapElement.getValue());
 			
 			// If the Item Name already exists in the shopping cart
@@ -145,6 +153,8 @@ public class Items
 				}
 				catch(InvalidItno ex){
 					System.out.println(ex.getMessage());
+					// Terminating if the Item name already exists
+					System.exit(0);
 				}
 				break;
 			}
@@ -152,6 +162,9 @@ public class Items
 		
 		// If the Item name is unique add it 
 		if(flag){
+			double rate;
+			System.out.println("Enter the Item Price : ");
+			rate = sc.nextDouble();
 			itls.itms.put(item_id,new Item(item_id,item_name,rate));
 		}
 		}
@@ -159,8 +172,6 @@ public class Items
 	
 	//removing item
 	//Added Remove item
-	//removing item is done here if the item is availiable and returns error if item doesnot exist 
-	     
 	void removeItem(int item_id){
 		
 		// If item Doesnt exists
@@ -170,12 +181,14 @@ public class Items
 			 }
 			 catch(InvalidItno ex){
 				 System.out.println(ex.getMessage());
+				 // Terminating if the Item Id already exists 
+				 System.exit(0);
 			 }
 		}
-		else{
+		else
 			itls.itms.remove(item_id);
-		}
 	}
+	
 	//checking item exists or not
 	boolean itemExists(int id)
 	{
