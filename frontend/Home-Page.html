@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPING</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,regular,italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__brand">
+          <img src="logo.jpg" alt="shop_logo" class="brand__logo" />
+        </div>
+        <div class="navbar__nav__items">
+          <div class="nav__item">
+            <button class="button__primary hide__mobile">Shop Now</button>
+            <button
+              class="button__primary update__menu mobile__only"
+              id="menu_item"
+            >
+              
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="hero__container">
+        <div class="hero__image__container">
+          <img src="hero.jpg" alt="hero image" class="hero__image" />
+          <img
+            src="heroShape.svg"
+            alt="hero image shape"
+            class="hero__image__shape"
+          />
+          <img
+            src="herobgpattren.svg"
+            alt="hero image shape"
+            class="hero__image__pattren"
+          />
+        </div>
+        <div class="hero__description">
+          <h1 class="hero__text">
+            Shop your favourite items now!!.
+          </h1>
+          <button class="button__primary">Shop Now</button>
+        </div>
+      </section>
+
+      <section class="item__list__container">
+        <h1 class="text-xl">Explore Our Menu..</h1>
+        <div class="item__list__container__diagonal"></div>
+
+        <div class="item__menu__card__list">
+          <div class="item__menu__card">
+            <img
+              src="boypic.jpg"
+              alt="menswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Men's wear</strong></h4>
+              <p>
+                shirt , Pant , T-shirt
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+          <div class="item__menu__card item__menu__card__move__up">
+            <img
+              src="girlpic.jpg"
+              alt="ladieswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Ladies wear</strong></h4>
+              <p>
+                shirt , Pant , T-shirt
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+          <div class="item__menu__card">
+            <img
+              src="kids.png"
+              alt="kidswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Kids wear</strong></h4>
+              <p>
+                Toys , shoes , dolls
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item__list__view__more">View More..</div>
+      </section>
+      <section class="shopping__list__container">
+        <div class="shopping__list__text">
+          <h4 class="text-xl">You have plenty of products to order!!.</h4>
+        </div>
+        <div class="shopping__list__images__container">
+          <div class="shopping__list__row_1">
+            <div>
+              <img
+                src="pic1.png"
+                alt="shopping1"
+                class="shopping1"
+              />
+            </div>
+            <img
+              src="pic2.jpg"
+              alt="shopping2"
+              class="shopping2"
+            />
+          </div>
+          <div class="shopping__list__row_2">
+            <img
+              src="pic3.jpg"
+              alt="shopping3"
+              class="shopping3"
+            />
+            <img
+              src="pic4.jpg"
+              alt="shopping4"
+              class="shopping4"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="email__subcribe__container">
+        <div>
+          <h1 class="text-xl">Stay Updated Everyday!!</h1>
+          <div class="email__subcribe__input__field">
+            <button class="button__primary">Get Updates Here >></button>
+            <div>
+              <input
+                type="email"
+                placeholder="abc@email.com"
+                class="email__input"
+              />
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="quote__container">
+        <div class="quote_image_overlay"></div>
+        <h3 class="quote_image_text">
+          STAY HOME & SHOP ONLINE. YOU'RE TOO PRETTY TO HAVE TO LOOK FOR A PARKING SPOT
+        </h3>
+      </section>
+    </main>
+    <footer>
+      <img src="logo.jpg" alt="shop_logo" />
+      <ul>
+        <li>Pricing</li>
+        <li>Terms and conditions</li>
+        <li>Partnership</li>
+        <li>Career</li>
+        <li>Contact</li>
+      </ul>
+    </footer>
+    <script>
+      const mobileNavDropDown = document.querySelector(
+        ".mobile__navbar__items"
+      );
+      window.addEventListener("click", () => {
+        if (mobileNavDropDown.classList.contains("update__menu__close"))
+          return mobileNavDropDown.classList.remove("update__menu__close");
+        return mobileNavDropDown.classList.add("update__menu__close");
+      });
+    </script>
+  </body>
+</html>
