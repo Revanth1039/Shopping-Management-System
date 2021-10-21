@@ -270,8 +270,8 @@
   }
   
   footer > img {
-    width: 300px;
-    filter: brightness(0) invert(1);
+    width: 150px;
+    height: 130px;
   }
   
   footer > ul {
@@ -424,7 +424,7 @@
       margin-top: 3rem;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
   }
   
