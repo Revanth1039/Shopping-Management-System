@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    
+    <title>Document</title>
+    <style>
+        .topnav {
+            background-color: #333;
+            overflow: auto;
+            width: 100%;
+            position: relative;
+        }
+        .topnav a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            margin-bottom:0%;
+            padding: 18px 10px;
+            text-decoration: none;
+            font-size: 17px;
+            float: left;
+            height:64px;
+            
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            text-shadow: black;
+        }
+        .topnav #home{
+            float: left;
+        }
+        .topnav #carto{
+            float: right;
+        }
+        .sidenav a{
+            display: block;
+        }
+        .sidenav{
+            background-color: black;
+            overflow: auto;
+            width: auto;
+            height: 100%;
+            padding-top: 11.5%;
+            position: absolute;
+        }
+        .sidenav a {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 10px 10px 10px 1px;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            
+        }
+        .sidenav a:hover {
+            background-color: #ddd;
+            color: white;
+            text-shadow: black;
+        }
+        .frame{
+            height: 500px;
+            width: 500px;
+            margin: 10%;
+            margin-left: 40%;
+            border: 5px solid black;
+            position: relative;
+        } #bt1{
+     position:relative;
+     margin-left: 80%;
+     right:5px;
+     bottom: 5px;
+     width:150px;
+     height:40px;
+     background-color: rgb(212, 162, 52);
+   }
+    </style>
+</head>
+<body >
+    <nav class="topnav" id="myTopnav">
+        <a href="#home" id="home">S-M-S</a>
+        <a href="#home" id="home">Home</a>
+        <a href="cart.html" id="carto" style="padding: 0%;"><img src="cart.jpg" alt="Logo" height="64px" width="64px"></a>
+    </nav>
+    <nav class="sidenav">
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="electronics.html" class="baritem" target="ff">Electrical</a>
+            </li>
+            <li>
+                <a href="cloth.html" class="baritem" target="ff">Clothing</a>
+            </li>
+            <li>
+                <a href="homedec.html" class="baritem" target="ff">Home Decors</a>
+            </li>
+            <li>
+                <a href="footwear.html" class="baritem" target="ff">Foot Wear</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+        <iframe class="frame" name="ff"></iframe>
+        <button id="bt1" onclick="swealert()" >Move To Cart</button>
+      </div>
+      <script>
+          function swealert(){
+  Swal.fire({
+  title: 'Do you want to move to cart?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'Yes',
+  denyButtonText: 'No',
+}).then((result) => {
+  if (result.isConfirmed) {
+    addEventListener("click",navigate());
+  } else if (result.isDenied) {
+    Swal.fire('Changes are not saved', '', 'info')
+  }
+});
+          }
+function navigate(){
+  window.location.href="cart.html";
+}
+      </script>
+</body>
+</html>
