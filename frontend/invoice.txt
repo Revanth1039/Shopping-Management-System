@@ -1,0 +1,6 @@
+Item Id             Name        Quantity        Price   
+  101           Mobile Phone        1           8000 Rs
+  103           RoyMand Shiry       3           4000 Rs
+
+  --------------------------------------------------------
+  Total Bill :                                 12,0000 Rs
