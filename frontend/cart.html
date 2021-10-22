@@ -5,6 +5,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style type="text/css">
     
     body{
@@ -175,7 +176,7 @@
 	<span id="savings"></span><br/>
     </h2>
     <form action="billing.html">
-        <input type="button" id="proceed" value="proceed to payment"/>
+        <button type="button" onclick="swealert()" id="proceed">proceed to payment</button>
     </form>
     
     </div>
@@ -206,6 +207,24 @@
 	document.getElementById("valid").innerHTML="<br/><br/>Invalid Coupon or Expired";
 	}
 	}
+    function swealert(){
+  Swal.fire({
+  title: 'Do you want to move to cart?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'Yes',
+  denyButtonText: 'No',
+}).then((result) => {
+  if (result.isConfirmed) {
+    addEventListener("click",navigate());
+  } else if (result.isDenied) {
+    Swal.fire('&#128532;', '', '')
+  }
+});
+          }
+function navigate(){
+  window.location.href="billing.html";
+}
 	
 
     </script>
