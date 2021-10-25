@@ -19,29 +19,75 @@
         {
             background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(http://discovertemplate.com/wp-content/uploads/2020/12/DT_G71_Online-Shopping-Animated-GIF-Icon-pack-1.gif);
         }
+        input[type=text],input[type=tel]{
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
     <center >
-        <div style="width: 500px; height: 700px; margin-top: 200px;padding-top: 50px; border: 1px solid black; background-color:  #ebf2ff;" id="img" >
+        <div style="width: 500px; height: 750px; margin-top: 200px;padding-top: 50px; border: 1px solid black; background-color:  #ebf2ff;" id="img" >
             <span style="font-size: 50px; font-weight: bolder;">Add User</span>
             <br>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%; margin-bottom: 0%;">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="dismiss">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-            <br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Username: </span> <input type="text" id="username" style="height: 30px; border: 2px solid black;"><br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-                Email: </span> <input type="text" id="email" style="height: 30px; border: 2px solid black;"><br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Password: </span><input type="text" id="pswrd" style="height: 30px; border: 2px solid black;"><br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Phone No: </span><input type="tel" id="phno" style="height: 30px; border: 2px solid black;"><br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Adress:</span><input type="text" id="adrs" style="height: 30px; border: 2px solid black; height: 40px;"><br><br>      
+            
+            <table>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Username: </span> 
+                    </td>
+                    <td>
+                        <input type="text" id="username" style="height: 30px; border: 2px solid black;"><br><br>
+            
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Email: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="email" style="height: 30px; border: 2px solid black;"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Password: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="pswrd" style="height: 30px; border: 2px solid black;"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Phone No: </span>
+                    </td>
+                        <td>
+                            <input type="tel" id="phno" style="height: 30px; border: 2px solid black;"><br><br>
+                    
+                        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Adress:</span>
+                    </td>
+                    <td>
+                        <input type="text" id="adrs" style="height: 30px; border: 2px solid black; height: 40px;"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+                    
             <button class="btn btn-info" onclick="validate()">Submit</button>
         </div>
     </center>
