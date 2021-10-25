@@ -23,7 +23,7 @@
 </head>
 <body>
     <center >
-        <div style="width: 500px; height: 500px; margin-top: 200px;padding-top: 50px;" id="img">
+        <div style="width: 700px; height: 500px; margin-top: 200px;padding-top: 100px; background-color:#ebf2ff; border: 2px solid black;" id="img">
             <span style="font-size: 50px; font-weight: bolder;">Update Item Price</span>
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
@@ -31,14 +31,21 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-            <br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Item Id: </span> <input type="password" id="itid" style="height: 30px; border: 2px solid black;"><br>
-            <br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-               New Price: </span><input type="password" id="nprice" style="height: 30px; border: 2px solid black;"><br>
-          <br>
-          <br>
+              <br>
+            <table>
+              <tr>
+                <td>  <span style="color: black; font-weight: bold; font-size: 30px;">
+                  Item Id: </span> </td>
+                <td><input type="password" id="itid" style="height: 30px; border: 2px solid black;"></td>
+              </tr>
+              
+              <tr>
+                <td> <span style="color: black; font-weight: bold; font-size: 30px;">
+                  New Price: </span></td>
+                <td><input type="password" id="nprice" style="height: 30px; border: 2px solid black;"></td>
+              </tr>
+            </table>
+         
             <button class="btn btn-info" onclick="validate()">Submit</button>
         </div>
     </center>
@@ -66,7 +73,7 @@
           {                   
             Swal.fire({
               
-              title: "Do You Want to Update the Price of the Item? ",
+              title: "Do You Want to Update the Price of the Item with item id :"+itid +"? ",
               icon: 'question',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',
