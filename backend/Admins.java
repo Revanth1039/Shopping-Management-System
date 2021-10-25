@@ -51,7 +51,7 @@ class Admins{
 	}void removecus(int id){
 		c.remove(id);
 	}void addNewItem(int n,String itname,double rate){
-		i.addItem(n,itname,rate);
+		i.addItem();
 	}void changePrice(int n,double price){
 		i.changeRate(n,price);
 		
