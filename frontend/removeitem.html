@@ -23,7 +23,7 @@
 </head>
 <body>
     <center >
-        <div style="width: 500px; height: 500px; margin-top: 200px;padding-top: 50px;" id="img">
+        <div style="width: 700px; height: 500px; margin-top: 200px;padding-top: 100px; background-color:  #ebf2ff; border: 2px solid black;" id="img">
             <span style="font-size: 50px; font-weight: bolder;">Remove Item</span>
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
@@ -32,13 +32,22 @@
                 </button>
               </div>
             <br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Item Id: </span> <input type="password" id="itid" style="height: 30px; border: 2px solid black;"><br>
-            <br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-               Conform the Item Id: </span><input type="password" id="citid" style="height: 30px; border: 2px solid black;"><br>
-          <br>
-          <br>
+            <table>
+            <tr>
+                <td><span style="color: black; font-weight: bold; font-size: 30px;">
+                    Item Id: </span> </td>
+                    <td><input type="password" id="itid" style="height: 30px; border: 2px solid black;">
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td><span style="color: black; font-weight: bold; font-size: 30px;">
+                            Conform the Item Id: </span></td>
+                            <td><input type="password" id="citid" style="height: 30px; border: 2px solid black;">
+                            </td>
+                            </tr>
+            
+            </table>
             <button class="btn btn-info" onclick="validate()">Submit</button>
         </div>
     </center>
@@ -80,7 +89,7 @@
 
                     swalWithBootstrapButtons.fire({
                     title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    text: "Do you want to delete item with id : "+itid,
                     icon: 'question',
                     showCancelButton: true,
                     confirmButtonText: 'Delete it!',
