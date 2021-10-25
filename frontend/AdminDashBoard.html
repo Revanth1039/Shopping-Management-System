@@ -14,14 +14,14 @@
         body{
             font-family: "Merriweather", sans-serif;
             background-color: #ebf2ff;
-            overflow-x: hidden;
+            overflow: auto;
             transition: 0.5s;
         }
         .topnav {
             
             
             display: flex;
-            
+            overflow: hidden;
             align-items: center;
             background-color: #f9fafc;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -30,7 +30,8 @@
                     
         }
         .topnav a {
-            display: block;
+            display: flex;
+            position: relative;
             color: tomato;
             text-align: center;
             margin-bottom:0%;
@@ -111,10 +112,29 @@
             );
         }
         .dropdown:hover .dropdown-menu {
-            display: block;
+            display: block ;
             right: 1%;
         }
-        
+        @media (max-width: 575.98px) {
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
+        @media (max-width: 991.98px) { 
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }        
+        @media (max-width: 1199.98px) { 
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -134,7 +154,7 @@
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <li><a class="dropdown-item" href="AdminDashBoard.html">Home</a></li>
-              <li><a class="dropdown-item" href="#HomePage">Logout</a></li>
+              <li><a class="dropdown-item" href="Home-Page.html">Logout</a></li>
             </ul>
         </div>
         <div style="right: 0;">
@@ -145,23 +165,23 @@
     <nav class="sidenav">
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="temp.html" target="myFrame">Add Item</a>   <!--- Add Item HTML ---> 
+                <a href="additem.html" target="myFrame">Add Item</a>   <!--- Add Item HTML ---> 
             </li>
             <li>
-                <a href="css1.html" target="myFrame">Remove Item</a> <!--- Rem Item HTML --->
+                <a href="removeitem.html" target="myFrame">Remove Item</a> <!--- Rem Item HTML --->
             </li>
             <li>
-                <a href="#b" target="myFrame">Add User</a> <!--- Add User HTML --->
+                <a href="adduser.html" target="myFrame">Add User</a> <!--- Add User HTML --->
             </li>
             <li>
-                <a href="#c" target="myFrame">Remove User</a> <!--- Rem User HTML --->
+                <a href="removeuser.html" target="myFrame">Remove User</a> <!--- Rem User HTML --->
             </li>
             <li>
-                <a href="#d" target="myFrame">Update Price</a> <!--- Update Price HTML --->
+                <a href="updateprice.html" target="myFrame">Update Price</a> <!--- Update Price HTML --->
             </li>
         </ul>
     </nav>
-    <iframe class="div-frame" name="myFrame" src="css1.html"></iframe>
+    <iframe class="div-frame" name="myFrame"src="defaultadmindb.html"></iframe>
     
 </body>
 </html>

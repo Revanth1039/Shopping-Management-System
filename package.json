@@ -19,5 +19,6 @@
   "homepage": "https://github.com/Aditya-Kamarsu/Shopping-Management-System#readme",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {}
 }

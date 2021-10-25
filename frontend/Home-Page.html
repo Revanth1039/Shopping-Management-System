@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,regular,italic,700,700italic,900,900italic"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <header>
@@ -15,9 +16,10 @@
         <div class="navbar__brand">
           <img src="logo.jpg" alt="shop_logo" class="brand__logo" />
         </div>
+        <div style="float:left;font-weight: bold;font-style: italic;font-size: 25px; color: coral; width: 400px; margin: 0 auto;position: relative;"> Shopping Management System</div>
         <div class="navbar__nav__items">
           <div class="nav__item">
-            <button class="button__primary hide__mobile">Shop Now</button>
+            <button class="button__primary hide__mobile" ><a style="text-decoration: none; color: white;" href="main.html">Shop Now</a></button>
             <button
               class="button__primary update__menu mobile__only"
               id="menu_item"
@@ -47,7 +49,7 @@
           <h1 class="hero__text">
             Shop your favourite items now!!.
           </h1>
-          <button class="button__primary">Shop Now</button>
+          <button class="button__primary"><a style="text-decoration: none; color: white;" href="main.html">Shop Now</a></button>
         </div>
       </section>
 
@@ -138,15 +140,17 @@
         <div>
           <h1 class="text-xl">Stay Updated Everyday!!</h1>
           <div class="email__subcribe__input__field">
-            <button class="button__primary">Get Updates Here >></button>
+            
             <div>
               <input
                 type="email"
                 placeholder="abc@email.com"
-                class="email__input"
+                class="email__input" 
+                name="inp"
               />
+              
             </div>
-            
+            <button class="button__primary" onclick="check()"> << Get Updates Here </button>
           </div>
         </div>
       </section>
@@ -154,14 +158,15 @@
       <section class="quote__container">
         <div class="quote_image_overlay"></div>
         <h3 class="quote_image_text">
-          STAY HOME & SHOP ONLINE. YOU'RE TOO PRETTY TO HAVE TO LOOK FOR A PARKING SPOT
+          STAY HOME & SHOP ONLINE.<br> YOU'RE TOO PRETTY TO HAVE TO LOOK FOR A PARKING SPOT
         </h3>
       </section>
     </main>
     <footer>
-      <img src="logo.jpg" alt="shop_logo" />
+      <img class="footimage" src="comlog.png" alt="shop_logo" />
       <ul>
-        <li>Pricing</li>
+        <li><br></li>
+        <li><a style="text-decoration: none;">Pricing</a></li>
         <li>Terms and conditions</li>
         <li>Partnership</li>
         <li>Career</li>
@@ -177,6 +182,28 @@
           return mobileNavDropDown.classList.remove("update__menu__close");
         return mobileNavDropDown.classList.add("update__menu__close");
       });
+      function check(){
+        var email=document.querySelector(".email__input").value;
+        var regemail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!regemail.test(email)){
+          Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Invalid Email!',
+        })
+        }    
+        else{
+          Swal.fire({
+          icon: 'success',
+          title: 'success...',
+          text: 'Hurray your updates will be sent soon!!!!',
+        })
+        }
+      }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

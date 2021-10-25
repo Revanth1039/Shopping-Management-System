@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add-Item</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
 </head>
 <body>
     <center >
-        <div style="width: 500px; height: 500px; margin-top: 200px;padding-top: 50px;" id="img">
+        <div  style="width: 500px; height: 550px; margin-top: 200px;padding-top: 50px; border: 1px solid black; background-color:  #ebf2ff;" id="img">
             <span style="font-size: 50px; font-weight: bolder;">Add Item</span>
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
@@ -32,13 +32,30 @@
                 </button>
               </div>
             <br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Item Name: </span> <input type="text" id="itname" style="height: 30px; border: 2px solid black;"><br>
+            <table>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Item Name: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="itname" style="height: 30px; border: 2px solid black;"><br>
+            
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Item Price: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="itprice" style="height: 30px; border: 2px solid black;"><br>
+         
+                    </td>
+                </tr>
+            </table>
             <br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-                Item Price: </span><input type="text" id="itprice" style="height: 30px; border: 2px solid black;"><br>
-          <br>
-          <br>
+             
             <button class="btn btn-info" onclick="validate()">Submit</button>
         </div>
     </center>
