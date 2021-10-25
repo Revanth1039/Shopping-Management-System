@@ -23,8 +23,9 @@
 </head>
 <body>
     <center >
-        <div style="width: 700px; height: 500px; margin-top: 200px;padding-top: 50px;" id="img">
+        <div style="width: 700px; height: 500px; margin-top: 200px;padding-top: 100px; border: 2px solid black; background-color:  #ebf2ff;" id="img">
             <span style="font-size: 50px; font-weight: bolder;">Remove User</span>
+
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="dismiss">
@@ -32,13 +33,20 @@
                 </button>
               </div>
             <br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-            Customer Id: </span> <input type="password" id="cid" style="height: 30px; border: 2px solid black;"><br>
-            <br><br>
-            <span style="color: black; font-weight: bold; font-size: 30px;">
-               Conform Customer Id: </span><input type="password" id="ccid" style="height: 30px; border: 2px solid black;"><br>
-          <br>
-          <br>
+          <table>
+              
+            <tr>
+                <td><span style="color: black; font-weight: bold; font-size: 30px;">
+            Customer Id: </span> </td>
+            <td><input type="password" id="cid" style="height: 30px; border: 2px solid black;"><br></td>
+           
+            <tr>
+            <td><span style="color: black; font-weight: bold; font-size: 30px;">
+               Conform the Customer Id: </span></td>
+               <td><input type="password" id="ccid" style="height: 30px; border: 2px solid black;">
+        </td>
+        </tr>
+        </table>
             <button class="btn btn-info" onclick="validate()">Submit</button>
         </div>
     </center>
@@ -80,7 +88,7 @@
 
                     swalWithBootstrapButtons.fire({
                     title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    text: "Do you want to delete the customer with id :"+ cid,
                     icon: 'question',
                     showCancelButton: true,
                     confirmButtonText: 'Delete it!',
