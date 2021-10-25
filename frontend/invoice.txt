@@ -1,6 +1,8 @@
-Item Id             Name        Quantity        Price   
-  101           Mobile Phone        1           8000 Rs
-  103           RoyMand Shiry       3           4000 Rs
-
+Item Id	  Item Name	  Item Quantity	  Each Price	Total Price
+  101	    T-shirt 	      5	            500	        2500
+  105	    Men Slippers	  2	            150       	300
+  106	    Sun-Glasses	    5	            400	        2000
+  102   	Shoes         	2           	1200      	2400
+  104   	Watch         	2           	2000      	4000
   --------------------------------------------------------
-  Total Bill :                                 12,0000 Rs
+  Total Bill :                                  11,200 Rs
